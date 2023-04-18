@@ -3,6 +3,8 @@ export const lightTheme = {
     text: '#363537',
     toggleBorder: '#FFF',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
+    bgButton: '#2b6cb0',
+    buttonText: '#edf2f7'
   }
 
   export const darkTheme = {
@@ -10,4 +12,6 @@ export const lightTheme = {
     text: '#FAFAFA',
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
+    bgButton: '#81e6d9',
+    buttonText: '#283141'
   }

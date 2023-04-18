@@ -1,11 +1,12 @@
-import styled from "styled-components";
 import { HiSun, HiMoon } from 'react-icons/hi'
 
 const Toggle = ({ theme, toggleTheme }) => {
     const isLight = theme === 'light';
     return (
         <button onClick={toggleTheme}>
-            {isLight ? <HiMoon /> : <HiSun />}
+            {isLight
+            ? <HiMoon className='fs-2 text-dark'/>
+            : <HiSun className='fs-2 text-light'/>}
         </button>
     );
 };
