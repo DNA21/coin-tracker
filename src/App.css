@@ -13,12 +13,12 @@
   text-decoration: none;
 }
 
-/* .show {
-  height: 85vh;
+.positive-percentage {
+  color: green;
+  font-weight: 600;
 }
 
-.show .navbar-nav {
-  height: 95%;
-  display: flex;
-  justify-content: space-between;
-} */
+.negative-percentage {
+  color: red;
+  font-weight: 600;
+}

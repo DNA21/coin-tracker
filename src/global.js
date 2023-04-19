@@ -23,12 +23,12 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
-  .sign-up-button {
+  .bgButton {
     background: ${({ theme }) => theme.bgButton};
     color: ${({ theme }) => theme.buttonText}
   }
 
-  .sign-in-button {
+  .bgButtonSecondary {
     background: ${({ theme }) => theme.bgButtonSecondary};
     color: ${({ theme }) => theme.text}
   }
@@ -47,5 +47,14 @@ export const GlobalStyles = createGlobalStyle`
 
   .bgSecondary {
     background: ${({ theme }) => theme.bgSecondary};
+  }
+
+  ::placeholder {
+    color: ${({ theme }) => theme.text};
+    opacity: 0.5;
+  }
+
+  td {
+    color: ${({ theme }) => theme.text};
   }
   `;
