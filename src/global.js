@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { FiMenu } from 'react-icons/fi';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -29,6 +28,11 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.buttonText}
   }
 
+  .sign-in-button {
+    background: ${({ theme }) => theme.bgButtonSecondary};
+    color: ${({ theme }) => theme.text}
+  }
+
   .nav-link {
     color: ${({ theme }) => theme.text};
   }
@@ -39,5 +43,9 @@ export const GlobalStyles = createGlobalStyle`
 
   .navbar-toggler-icon {
     color: ${({ theme }) => theme.text};
+  }
+
+  .bgSecondary {
+    background: ${({ theme }) => theme.bgSecondary};
   }
   `;

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
-import Toggle from './components/Toggle';
-import Navbar from './components/navbar';
 import Header from './components/Header';
 import './App.css';
 
