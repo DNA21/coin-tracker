@@ -52,17 +52,19 @@ const Header = (props) => {
                             <Toggle theme={theme} toggleTheme={toggleTheme} />
                         </NavItem>
                         </div>
+                        <div className='d-flex align-items-center'>
+                            {/* Navbar Sign in/out */}
+                            <NavItem className='d-none d-md-block'>
+                                <NavLink className='bgButtonSecondary text-link px-4 py-2 rounded-5 shadow-lg mx-2' to='/signin'>Sign In</NavLink>
+                                <NavLink className='text-link bgButton px-4 py-2 rounded-5' to='signup'>Sign Up</NavLink>
+                            </NavItem>
+                        </div>
                         <div>
-                        {/* Navbar Sign in/out */}
-                        <NavItem className='d-none d-md-block'>
-                            <NavLink className='bgButtonSecondary text-link px-4 py-2 rounded-5 shadow-lg mx-2' to='/signin'>Sign In</NavLink>
-                            <NavLink className='text-link bgButton px-4 py-2 rounded-5' to='signup'>Sign Up</NavLink>
-                        </NavItem>
-                        {/* Collapsed Sign in/out */}
-                        <NavItem className='py-4 d-block d-md-none d-flex flex-column'>
-                            <NavLink className='bgButtonSecondary text-link px-4 py-2 rounded-5 mb-2 text-center shadow-lg' to='/signin'>Sign In</NavLink>
-                            <NavLink className='text-link bgButton px-4 py-2 rounded-5 text-center' to='signup'>Sign Up</NavLink>
-                        </NavItem>
+                            {/* Collapsed Sign in/out */}
+                            <NavItem className='py-4 d-block d-md-none d-flex flex-column'>
+                                <NavLink className='bgButtonSecondary text-link px-4 py-2 rounded-5 mb-2 text-center shadow-lg' to='/signin'>Sign In</NavLink>
+                                <NavLink className='text-link bgButton px-4 py-2 rounded-5 text-center' to='signup'>Sign Up</NavLink>
+                            </NavItem>
                         </div>
                     </Nav>
                 </Collapse>
