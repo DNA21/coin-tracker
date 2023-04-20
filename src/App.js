@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './routes/Home';
@@ -39,6 +40,7 @@ function App() {
                         <Route path=':coinId' />
                     </Route>
                 </Routes>
+                <Footer theme={theme} setTheme={setTheme} />
             </>
         </ThemeProvider>
     );
