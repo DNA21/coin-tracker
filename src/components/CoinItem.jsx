@@ -1,6 +1,7 @@
 import React from 'react'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import {BsStar, BsStarFill} from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const CoinItem = ({coin}) => {
     return (
@@ -8,14 +9,16 @@ const CoinItem = ({coin}) => {
             <td className='align-middle'><BsStar /></td>
             <td className='align-middle'>{coin.market_cap_rank}</td>
             <td className='align-middle'>
-                <div className='d-flex align-items-center'>
-                    <img
-                        style={{width: 1.5 + 'rem'}}
-                        className='p-0'
-                        src={coin.image}
-                        alt={coin.id} />
-                    <span className='d-none d-sm-block'>{coin.name}</span>
-                </div>
+                <Link className='text-link' to={`/coin/${coin.id}`}>
+                    <div className='d-flex align-items-center'>
+                        <img
+                            style={{width: 1.5 + 'rem'}}
+                            className='p-0'
+                            src={coin.image}
+                            alt={coin.id} />
+                        <span className='d-none d-sm-block px-2'>{coin.name}</span>
+                    </div>
+                </Link>
             </td>
             <td className='align-middle'>{coin.symbol.toUpperCase()}</td>
             <td className='align-middle'>${coin.current_price.toLocaleString()}</td>
