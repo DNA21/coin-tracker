@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Input, Label, Container, InputGroup } from 're
 
 const SignIn = () => {
     return (
-        <Container className='h-100 d-flex flex-column justify-content-end align-items-center'>
+        <Container className='h-100 d-flex flex-column justify-content-center align-items-center'>
             <div>
                 <h2>Sign In</h2>
                 <Form>

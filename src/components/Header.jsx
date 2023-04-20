@@ -32,7 +32,7 @@ const Header = (props) => {
                 </NavbarBrand>
 
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
-                <Collapse isOpen={menuOpen} navbar>
+                <Collapse isOpen={menuOpen} navbar className={`${menuOpen ? 'nav-collapse bgSecondary' : ''}`}>
                     <Nav className='ms-auto' navbar>
                         <div>
                         <NavItem className='d-block d-md-none'>

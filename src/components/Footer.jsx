@@ -15,7 +15,7 @@ const Footer = (props) => {
     }
 
     return (
-        <Container className='bgSecondary rounded-4 mt-4 fixed-bottom'>
+        <Container className='bgSecondary rounded-4 mt-4'>
             <div className='row pt-4'>
                 <div className='col-12 col-md-6'>
                     <div className='d-flex justify-content-evenly text-uppercase'>
