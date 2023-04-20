@@ -57,4 +57,8 @@ export const GlobalStyles = createGlobalStyle`
   td {
     color: ${({ theme }) => theme.text};
   }
+
+  p {
+    margin: 0;
+  }
   `;

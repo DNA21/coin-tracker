@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparklines, SparklinesLine } from 'react-sparklines'
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 import {BsStar, BsStarFill} from 'react-icons/bs';
 
 const CoinItem = ({coin}) => {

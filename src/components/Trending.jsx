@@ -20,9 +20,9 @@ const Trending = () => {
         <Container className='bgSecondary rounded-4 mt-4'>
             <h1 className='fs-3 fw-bold py-2'>Trending</h1>
             <div className='row'>
-                {trending.map((coin) => {
+                {trending.map((coin, idx) => {
                     return (
-                        <div className='col-md-6 col-lg-4'>
+                        <div key={idx} className='col-md-6 col-lg-4'>
                             <div className='rounded-5 shadow-lg my-2 d-flex justify-content-between align-items-center'>
                                 <div className='d-flex'>
                                     <img className='rounded-circle' src={coin.item.small} alt='id' />
