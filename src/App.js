@@ -12,6 +12,7 @@ import SignUp from './routes/SignUp';
 import Account from './routes/Account';
 import CoinPage from './routes/CoinPage';
 import axios from 'axios';
+import { AuthContextProvider } from './context/AuthContext';
 
 function App() {
     const [theme, setTheme] = useState('light');
@@ -28,20 +29,22 @@ function App() {
 
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-            <>
-                <GlobalStyles />
-                <Header theme={theme} setTheme={setTheme} />
-                <Routes>
-                    <Route path='/' element={ <Home coins={coins}/> } />
-                    <Route path='/signin' element={ <SignIn /> } />
-                    <Route path='/signup' element={ <SignUp /> } />
-                    <Route path='/account' element={ <Account /> } />
-                    <Route path='/coin/:coinId' element={ <CoinPage /> }>
-                        <Route path=':coinId' />
-                    </Route>
-                </Routes>
-                <Footer theme={theme} setTheme={setTheme} />
-            </>
+            <AuthContextProvider>
+                <>
+                    <GlobalStyles />
+                    <Header theme={theme} setTheme={setTheme} />
+                    <Routes>
+                        <Route path='/' element={ <Home coins={coins}/> } />
+                        <Route path='/signin' element={ <SignIn /> } />
+                        <Route path='/signup' element={ <SignUp /> } />
+                        <Route path='/account' element={ <Account /> } />
+                        <Route path='/coin/:coinId' element={ <CoinPage /> }>
+                            <Route path=':coinId' />
+                        </Route>
+                    </Routes>
+                    <Footer theme={theme} setTheme={setTheme} />
+                </>
+            </AuthContextProvider>
         </ThemeProvider>
     );
 }
