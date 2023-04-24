@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.25s linear;
   }
 
-  a {
+  a, .bgbuttonSecondary, .nav-link, h1, .navbar-toggler-icon, ::placeholder, td {
     color: ${({ theme }) => theme.text};
   }
 
@@ -30,19 +30,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .bgButtonSecondary {
     background: ${({ theme }) => theme.bgButtonSecondary};
-    color: ${({ theme }) => theme.text}
-  }
-
-  .nav-link {
-    color: ${({ theme }) => theme.text};
-  }
-
-  h1 {
-    color: ${({ theme }) => theme.text};
-  }
-
-  .navbar-toggler-icon {
-    color: ${({ theme }) => theme.text};
   }
 
   .bgSecondary {
@@ -50,15 +37,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::placeholder {
-    color: ${({ theme }) => theme.text};
     opacity: 0.5;
-  }
-
-  td {
-    color: ${({ theme }) => theme.text};
-  }
-
-  p {
-    margin: 0;
   }
   `;

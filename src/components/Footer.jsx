@@ -1,7 +1,7 @@
 import React from 'react'
 import Toggle from './Toggle';
 import { Container } from 'reactstrap';
-import { FaInstagram, FaTiktok, FaTwitter, FaFacebookF, FaGithub, FaGit } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaTwitter, FaFacebookF, FaGithub } from 'react-icons/fa';
 
 const Footer = (props) => {
     const {theme, setTheme} = props;

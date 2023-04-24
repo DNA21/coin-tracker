@@ -33,3 +33,7 @@
   border-radius: 15px;
   border-bottom: 1px solid black;
 }
+
+p {
+  margin: 0;
+}

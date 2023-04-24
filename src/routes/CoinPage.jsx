@@ -129,7 +129,7 @@ const CoinPage = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='pb-3'>
                 <p className='fw-bold fs-5 pt-3'>About {coin.name}</p>
                 <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(coin.description ? coin.description.en : '') }}></p>
             </div>
