@@ -1,12 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import {BsStar, BsStarFill} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
+import { db } from '../firebase';
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 
 const CoinItem = ({coin}) => {
+    const [savedCoin, setSavedCoin] = useState(false);
+    const { user } = UserAuth();
+
+    const coinPath = doc(db, 'user', `${user?.email}`);
+    const saveCoin = async () => {
+        if (user?.email) {
+            setSavedCoin(true);
+            await updateDoc(coinPath, {
+                watchList: arrayUnion({
+                    id: coin.id,
+                    name: coin.name,
+                    image: coin.image,
+                    rank: coin.market_cap_rank,
+                    symbol: coin.symbol,
+                }),
+            });
+        } else {
+            alert('Please sign in to save a coin to your watch list');
+        }
+    };
+
     return (
         <tr className='overflow-hidden border-bottom table' style={{height: 80 + 'px'}}>
-            <td className='align-middle'><BsStar /></td>
+            <td onClick={saveCoin} className='align-middle'>{savedCoin ? <BsStarFill /> : <BsStar />}</td>
             <td className='align-middle'>{coin.market_cap_rank}</td>
             <td className='align-middle'>
                 <Link className='text-link' to={`/coin/${coin.id}`}>

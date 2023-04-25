@@ -21,7 +21,7 @@ const Account = () => {
         <>
             <Container className='bgSecondary rounded-4 mt-4 d-flex justify-content-between align-items-center'>
                 <div>
-                    <h1>Account</h1>
+                    <h1 className='pt-2 fs-3'>Account</h1>
                     <div>
                         <p>Welcome, {user?.email}</p>
                     </div>
@@ -31,8 +31,8 @@ const Account = () => {
                 </div>
             </Container>
             <Container className='bgSecondary rounded-4 mt-4'>
-                <div>
-                    <h1>Watch List</h1>
+                <div style={{ minHeight: 150 + 'px'}}>
+                    <h1 className='pt-2 fs-3'>Watch List</h1>
                     <SavedCoin />
                 </div>
             </Container>
