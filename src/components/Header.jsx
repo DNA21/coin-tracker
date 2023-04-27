@@ -77,8 +77,8 @@ const Header = (props) => {
                                 </div>
                                 <div>
                                     {/* Collapsed Sign Out */}
-                                    <NavItem className='py-4 d-block d-md-none d-flex flex-column'>
-                                        <button className='text-link bgButton px-4 py-2 rounded-5 text-center'>Sign Out</button>
+                                    <NavItem onClick={() => setMenuOpen(!menuOpen)} className='py-4 d-block d-md-none d-flex flex-column'>
+                                        <button onClick={handleSignOut} className='text-link bgButton px-4 py-2 rounded-5 text-center'>Sign Out</button>
                                     </NavItem>
                                 </div>
                             </>
@@ -93,7 +93,7 @@ const Header = (props) => {
                                 </div>
                                 <div>
                                     {/* Collapsed Sign in/up */}
-                                    <NavItem className='py-4 d-block d-md-none d-flex flex-column'>
+                                    <NavItem onClick={() => setMenuOpen(!menuOpen)} className='py-4 d-block d-md-none d-flex flex-column'>
                                         <NavLink className='bgButtonSecondary text-link px-4 py-2 rounded-5 mb-2 text-center shadow-lg' to='/signin'>Sign In</NavLink>
                                         <NavLink className='text-link bgButton px-4 py-2 rounded-5 text-center' to='signup'>Sign Up</NavLink>
                                     </NavItem>

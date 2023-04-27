@@ -15,7 +15,7 @@ const SavedCoin = () => {
         })
     }, [user?.email]);
 
-    const coinPath = doc(db, 'user', `${user.email}`);
+    const coinPath = doc(db, 'user', `${user?.email}`);
     const deleteCoin = async (deletedCoinId) => {
         try {
             const result = coins.filter((item) => item.id !== deletedCoinId);

@@ -4,7 +4,7 @@ import {BsStar, BsStarFill} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { arrayUnion, doc, updateDoc, getDoc, getDocs, onSnapshot, query, where, collection } from 'firebase/firestore';
 
 const CoinItem = ({coin}) => {
     const [savedCoin, setSavedCoin] = useState(false);
@@ -27,6 +27,30 @@ const CoinItem = ({coin}) => {
             alert('Please sign in to save a coin to your watch list');
         }
     };
+
+    //const docRef = doc(db, 'user', 'watchList')
+    // const colRef = collection(db, 'user', `${user.email}`, 'watchList')
+    // const q = query(colRef, where('id', '==', 'ethereum'))
+    // console.log(colRef)
+
+    // const q = query(getDoc(coinPath, where('id', '==', 'ethereum')))
+    // .then(doc => {
+    //     console.log(doc.data().watchList.id)
+    // })
+    const colRef = collection(db, 'user')
+
+    onSnapshot(colRef, (snapshot) => {
+        let favCoins = []
+        snapshot.docs.forEach((doc) => {
+            favCoins.push({ ...doc.data(), id: doc.id})
+        })
+        favCoins = favCoins.find(userId => userId.id === `${user?.email}`)
+
+        if (favCoins?.watchList.some(coinId => coinId.id === coin.id)) {
+            setSavedCoin(true);
+        }
+
+    })
 
     return (
         <tr className='overflow-hidden border-bottom table' style={{height: 80 + 'px'}}>
