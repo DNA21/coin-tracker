@@ -45,25 +45,25 @@ const Header = (props) => {
                 </NavbarBrand>
 
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
-                <Collapse isOpen={menuOpen} navbar className={`${menuOpen ? 'nav-collapse bgSecondary' : ''}`}>
+                <Collapse isOpen={menuOpen} navbar className={`${menuOpen ? 'nav-collapse bgSecondary' : ''} container`}>
                     <Nav className='ms-auto' navbar>
-                        <div>
-                        <NavItem className='d-block d-md-none'>
-                            <NavLink className='nav-link border-bottom py-5' to='/'>
-                                Home
-                            </NavLink>
-                        </NavItem>
-                        <NavItem className='d-block d-md-none'>
-                            <NavLink className='nav-link border-bottom py-5' to='/account'>
-                                Account
-                            </NavLink>
-                        </NavItem>
-                        <NavItem className='d-none d-md-block'>
-                            <Toggle theme={theme} toggleTheme={toggleTheme} />
-                        </NavItem>
-                        <NavItem  className='d-block d-md-none py-5'>
-                            <Toggle theme={theme} toggleTheme={toggleTheme} />
-                        </NavItem>
+                        <div className='pl-3'>
+                            <NavItem className='d-block d-md-none'>
+                                <NavLink onClick={() => setMenuOpen(!menuOpen)} className='nav-link border-bottom py-5' to='/'>
+                                    Home
+                                </NavLink>
+                            </NavItem>
+                            <NavItem className='d-block d-md-none'>
+                                <NavLink onClick={() => setMenuOpen(!menuOpen)} className='nav-link border-bottom py-5' to={user?.email ? ('/account') : null }>
+                                    {user?.email? <div>Account</div> : (<div onClick={() => alert('You must be signed in to access your account')}>Account</div>)}
+                                </NavLink>
+                            </NavItem>
+                            <NavItem className='d-none d-md-block'>
+                                <Toggle theme={theme} toggleTheme={toggleTheme} />
+                            </NavItem>
+                            <NavItem  className='d-block d-md-none py-5'>
+                                <Toggle theme={theme} toggleTheme={toggleTheme} />
+                            </NavItem>
                         </div>
 
                         {user?.email ? (
