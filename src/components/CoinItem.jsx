@@ -4,7 +4,7 @@ import {BsStar, BsStarFill} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
-import { arrayUnion, doc, updateDoc, getDoc, getDocs, onSnapshot, query, where, collection } from 'firebase/firestore';
+import { arrayUnion, doc, updateDoc, onSnapshot, collection } from 'firebase/firestore';
 
 const CoinItem = ({coin}) => {
     const [savedCoin, setSavedCoin] = useState(false);
@@ -28,15 +28,6 @@ const CoinItem = ({coin}) => {
         }
     };
 
-    //const docRef = doc(db, 'user', 'watchList')
-    // const colRef = collection(db, 'user', `${user.email}`, 'watchList')
-    // const q = query(colRef, where('id', '==', 'ethereum'))
-    // console.log(colRef)
-
-    // const q = query(getDoc(coinPath, where('id', '==', 'ethereum')))
-    // .then(doc => {
-    //     console.log(doc.data().watchList.id)
-    // })
     const colRef = collection(db, 'user')
 
     onSnapshot(colRef, (snapshot) => {
@@ -51,6 +42,8 @@ const CoinItem = ({coin}) => {
         }
 
     })
+
+    // TODO: Delete Coin when clicking filled star
 
     return (
         <tr className='overflow-hidden border-bottom table' style={{height: 80 + 'px'}}>
