@@ -26,7 +26,6 @@ const SignUp = () => {
         <Container className='h-100 d-flex flex-column justify-content-center align-items-center'>
             <div>
                 <h2>Sign Up</h2>
-                {error ? <p className='text-danger'></p> : null}
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Label for='email'>

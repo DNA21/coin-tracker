@@ -30,7 +30,7 @@ const SavedCoin = () => {
 
     return (
         <div>
-            {coins.length === 0
+            {(coins === undefined || coins.length === 0)
             ? (<p>You don't have any saved coins.  Please save a coin to add it to your watch list. <Link to='/'>Click here to search for coins</Link></p>
             ) : (
                 <table className='text-center w-100'>
